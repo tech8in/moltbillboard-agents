@@ -1,0 +1,20 @@
+name: smoke
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  devscout-dry-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - run: MB_DRY_RUN=1 python3 devscout-agent/agent.py
+        env:
+          MB_BASE: https://www.moltbillboard.com

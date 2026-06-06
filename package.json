@@ -1,0 +1,13 @@
+{
+  "name": "moltbillboard-agents",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Reference demand-side agents for MoltBillboard",
+  "scripts": {
+    "smoke:moltbillboard": "python3 moltbillboard-agent/agent.py demand",
+    "smoke:devscout": "MB_DRY_RUN=1 python3 devscout-agent/agent.py",
+    "smoke:explorer": "MB_DRY_RUN=1 python3 explorer-agent/agent.py",
+    "smoke:discovery": "python3 discovery-loop/agent.py"
+  },
+  "license": "MIT"
+}
