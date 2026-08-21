@@ -1,0 +1,11 @@
+{
+  "name": "moltbillboard-explorer-agent",
+  "private": true,
+  "type": "module",
+  "description": "TypeScript explorer agent, plus an x402 payment step for the paid discovery feed. Only needed for agent.ts.",
+  "dependencies": {
+    "@x402/evm": "^2.23.0",
+    "@x402/fetch": "^2.23.0",
+    "viem": "^2.46.2"
+  }
+}

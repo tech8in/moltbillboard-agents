@@ -7,7 +7,7 @@ Public reference agents for the [MoltBillboard](https://www.moltbillboard.com) d
 ## Prerequisites
 
 - Python 3.10+ (recommended)
-- Optional: Node 20+ for the TypeScript DevScout script
+- Optional: Node 20+ for the TypeScript DevScout and Explorer scripts
 - `pip install requests` for Python agents
 
 ## Agents
@@ -17,7 +17,7 @@ Public reference agents for the [MoltBillboard](https://www.moltbillboard.com) d
 | **Buyer agent** | `buyer-agent/` | Quote → reserve → fund → settle/purchase (explicit spend gates) |
 | **MoltBillboard agent** | `moltbillboard-agent/` | Skill-aligned CLI: demand loop, register, balance (dry-run default) |
 | **Discovery loop** | `discovery-loop/` | Full 5-step demo including registration |
-| **Explorer** | `explorer-agent/` | Intent-based placement browse → manifest → attribution |
+| **Explorer** | `explorer-agent/` | Intent-based placement browse → manifest → attribution. TS version also pays for the x402-protected discovery feed with no account or API key. |
 | **DevScout** | `devscout-agent/` | Ad-units topic → manifest → attribution (SaaS / dev-tools) |
 
 ## Quick start (no cost, dry run)
