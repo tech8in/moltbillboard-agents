@@ -202,9 +202,14 @@ async function payForDiscoveryFeed(base: string, maxDollars: number) {
     spendControls: { maxAmountPerPayment: `${maxDollars}` },
   })
 
+  const counterOffer = env('MB_X402_COUNTER_OFFER')
+
   console.log('\nPaying for x402-protected discovery feed')
   console.log(`Wallet: ${account.address}`)
-  const res = await fetchWithPayment(`${base}/api/x402/placements`)
+  if (counterOffer) console.log(`Counter-offer: ${counterOffer}`)
+  const res = await fetchWithPayment(`${base}/api/x402/placements`, {
+    headers: counterOffer ? { 'MB-Counter-Offer': counterOffer } : undefined,
+  })
   if (!res.ok) throw new Error(`Paid discovery feed request failed: ${res.status} ${await res.text()}`)
   const data = (await res.json()) as { placements?: unknown[] }
   console.log(`Paid ${data.placements?.length ?? 0} placement(s) from the discovery feed`)
